@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.11
 MAINTAINER Capt.Insano
 
 #Dockerfile based on Dockerfiles of smdion
