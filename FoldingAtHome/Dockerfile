@@ -37,8 +37,8 @@ apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* && \
 wget --no-check-certificate -P /tmp/ https://fah.stanford.edu/file-releases/public/release/fahclient/debian-testing-64bit/v7.4/fahclient_7.4.4_amd64.deb && \
 mkdir -p /opt/fah && \
-dpkg -x /tmp/fahclient_7.4.4_amd64.deb /opt/fah  && \
-rm /tmp/fahclient_7.4.4_amd64.deb && \
+dpkg -x /tmp/fahclient_7.6.9_amd64.deb /opt/fah  && \
+rm /tmp/fahclient_7.6.9_amd64.deb && \
 chown -R nobody:users /opt/fah && \
 apt-get purge --remove wget -y && \
 apt-get autoremove -y && \
