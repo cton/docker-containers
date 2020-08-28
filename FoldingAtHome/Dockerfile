@@ -10,6 +10,7 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV TERM xterm
+ENV FAH_VERSION=7.6.13
 
 #Create Config File
 ADD config.xml /root/config.xml
@@ -35,10 +36,10 @@ apt-get update -q && \
 apt-get install -qy wget && \
 apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* && \
-wget --no-check-certificate -P /tmp/ https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.13_amd64.deb && \
+wget --no-check-certificate -P /tmp/ https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_${FAH_VERSION}_amd64.deb && \
 mkdir -p /opt/fah && \
-dpkg -x /tmp/fahclient_7.6.9_amd64.deb /opt/fah  && \
-rm /tmp/fahclient_7.6.9_amd64.deb && \
+dpkg -x /tmp/fahclient_${FAH_VERSION}_amd64.deb /opt/fah  && \
+rm /tmp/fahclient_${FAH_VERSION}_amd64.deb && \
 chown -R nobody:users /opt/fah && \
 apt-get purge --remove wget -y && \
 apt-get autoremove -y && \
